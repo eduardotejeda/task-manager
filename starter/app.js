@@ -5,15 +5,11 @@ const connectDB = require('./db/connect')
 require('dotenv').config() // for secret variable
 
 // middleware
-
+app.use(express.static('./public'))
 app.use(express.json())
 
 
 //routes
-app.get('/hello', (req, res) => {
-  res.send('Task Manager App')
-})
-
 app.use('/api/v1/tasks', tasks)
 
 const port = 5000;
