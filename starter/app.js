@@ -16,7 +16,9 @@ app.use('/api/v1/tasks', tasks)
 app.use(notFound)
 app.use(errorHandlerMiddleware)
 
-const port = 5000;
+const port = process.env.PORT || 5000; // Esto establece el puerto al puerto del ambiente donde se corre la aplicacion OR el puerto 5000.
+
+
 
 const start =  async () => {
   try {
